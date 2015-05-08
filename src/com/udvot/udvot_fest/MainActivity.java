@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -21,7 +22,8 @@ import com.udvot.client.Resource;
 
 public class MainActivity extends Activity implements OnClickListener {
 	EditText etUsername, etPassword;
-	Button bLogin, bSignup;
+	Button bLogin, bSignup, bViewProduct;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		bLogin.setOnClickListener(this);
 		bSignup = (Button) findViewById(R.id.signbutton);
 		bSignup.setOnClickListener(this);
+		bViewProduct = (Button) findViewById(R.id.bViewProduct);
+		bViewProduct.setOnClickListener(this);
 
 	}
 
@@ -128,6 +132,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			// sign up
 			Intent i = new Intent(MainActivity.this, SignUp.class);
 			startActivity(i);
+			finish();
+			break;
+		case R.id.bViewProduct:
+			Intent i2 = new Intent(this, Show_Product_Activity.class);
+			startActivity(i2);
 			finish();
 			break;
 

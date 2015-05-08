@@ -27,7 +27,7 @@ import com.udvot.utils.Product;
 
 public class ViewCartActivity extends Activity {
 	ListView list;
-	String[] productName, thumbImage, price; // = new String[100];
+	String[] productName, thumbImage, price, quantity; // = new String[100];
 	ArrayList<Product> products = new ArrayList<Product>();
 	ImageButton searchButton ; 
 
