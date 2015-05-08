@@ -14,6 +14,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+<<<<<<< HEAD
 		
 		setContentView(R.layout.login);
 		username=(EditText)findViewById(R.id.usernameeditText);
@@ -40,6 +41,10 @@ public class MainActivity extends Activity implements OnClickListener{
 			break;
 			
 		}
+=======
+		setContentView(R.layout.activity_main);
+		
+>>>>>>> 196a9773223ab681ce80ce6dc8caf60d343239b4
 	}
 
 }
