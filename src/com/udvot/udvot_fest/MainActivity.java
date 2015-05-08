@@ -35,6 +35,8 @@ public class MainActivity extends Activity implements OnClickListener{
 		{
 		case R.id.loginbutton:
 			//check login
+			Intent i1 = new Intent(this, Show_Product_Activity.class);
+			startActivity(i1);
 			break;
 		case R.id.signbutton:
 			//sign up
