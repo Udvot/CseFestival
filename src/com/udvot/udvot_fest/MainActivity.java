@@ -1,22 +1,23 @@
 package com.udvot.udvot_fest;
 
 import org.apache.http.Header;
-import org.apache.http.entity.StringEntity;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.udvot.client.ApiClient;
-import com.udvot.client.Resource;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.udvot.client.ApiClient;
+import com.udvot.client.Resource;
 
 public class MainActivity extends Activity implements OnClickListener {
 	EditText etUsername, etPassword;
@@ -39,6 +40,34 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 
+	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		int id=item.getItemId();
+		switch(id)
+		{
+		case R.id.view_cart:
+			break;
+		case R.id.logout_menu:
+			
+			break;
+		}
+		
+		
+		return super.onOptionsItemSelected(item);
+		
+		
+	}
+	
+	
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -81,8 +110,10 @@ public class MainActivity extends Activity implements OnClickListener {
 							Toast.makeText(getApplicationContext(), "Welcome "+userName, Toast.LENGTH_SHORT).show();
 							Resource.SESSOIN_TOKEN_VALUE = sessionToken;
 							Toast.makeText(getApplicationContext(), "Session Id "+Resource.SESSOIN_TOKEN_VALUE, Toast.LENGTH_SHORT).show();
+							
 							Intent i1 = new Intent(MainActivity.this, Show_Product_Activity.class);
 							startActivity(i1);
+							finish();
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}
@@ -97,6 +128,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			// sign up
 			Intent i = new Intent(MainActivity.this, SignUp.class);
 			startActivity(i);
+			finish();
 			break;
 
 		}

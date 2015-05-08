@@ -2,22 +2,13 @@ package com.udvot.udvot_fest;
 
 import java.io.UnsupportedEncodingException;
 
-import org.json.JSONException;
 import org.apache.http.Header;
-import org.apache.http.HttpEntity;
 import org.apache.http.entity.StringEntity;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-import com.udvot.client.ApiClient;
-import com.udvot.client.Resource;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +16,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.udvot.client.ApiClient;
+import com.udvot.client.Resource;
 
 public class SignUp extends Activity implements OnClickListener {
 	private Button bSignUp;
@@ -121,6 +116,9 @@ public class SignUp extends Activity implements OnClickListener {
 												"Session "
 														+ Resource.SESSOIN_TOKEN_VALUE,
 												Toast.LENGTH_SHORT).show();
+										Intent intent=new Intent(SignUp.this,Show_Product_Activity.class);
+										startActivity(intent);
+										finish();
 									} catch (JSONException e1) {
 										e1.printStackTrace();
 										try {
