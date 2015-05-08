@@ -1,7 +1,6 @@
 package com.udvot.udvot_fest;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 import org.apache.http.Header;
 import org.json.JSONArray;
@@ -10,14 +9,15 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.udvot.adapters.CustomListAdapter;
@@ -29,6 +29,7 @@ public class Show_Product_Activity extends Activity {
 	ListView list;
 	String[] productName, thumbImage, price; // = new String[100];
 	ArrayList<Product> products = new ArrayList<Product>();
+	ImageButton searchButton ; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,15 @@ public class Show_Product_Activity extends Activity {
 		list = (ListView) findViewById(R.id.product_list);
 		// initialize();
 		fetchProducts();
+		searchButton = (ImageButton) findViewById(R.id.imgBtSearch);
+		searchButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 
 	private void enumarateArrays() {
@@ -118,6 +128,18 @@ public class Show_Product_Activity extends Activity {
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			// TODO Auto-generated method stub
+			Long i=arg3;
+			Product p=products.get(i.intValue());
+			String des=p.getDescription();
+			String pricce=p.getPrice();
+			String name=p.getProductName();
+			String imgaUrl=p.getImageURL();
+			Intent intent=new Intent(Show_Product_Activity.this,ProductDetailsActivity.class);
+			intent.putExtra("Name",name);
+			intent.putExtra("Price",pricce);
+			intent.putExtra("ImageUrl",imgaUrl);
+			intent.putExtra("Description", des);
+			startActivity(intent);
 			Log.i("Udvot", "ListItem Clicked");
 		}
 	};

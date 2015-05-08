@@ -20,6 +20,12 @@ public class Product {
 		return productName;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
