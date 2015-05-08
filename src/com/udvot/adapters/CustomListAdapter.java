@@ -22,7 +22,6 @@ public class CustomListAdapter extends ArrayAdapter<String>{
 	
 	
 	private final Activity context;
-	ApiClient client;
 	String[] name,thumbUrl, price;
 	
 	public CustomListAdapter(Activity context,String[] name, String[] thumburl, String price[]) {		
@@ -31,7 +30,6 @@ public class CustomListAdapter extends ArrayAdapter<String>{
 		this.name = name;
 		this.thumbUrl = thumburl;
 		this.price = price;
-		client = new ApiClient();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -54,7 +52,7 @@ public class CustomListAdapter extends ArrayAdapter<String>{
 		holder.thumb_img = (ImageView) rowView.findViewById(R.id.listimageView);
 		holder.product_name.setText(name[position]);
 		holder.price.setText("Price : "+ price[position]);
-		client.setImageFromURL(thumbUrl[position], holder.thumb_img);
+		ApiClient.setImageFromURL(thumbUrl[position], holder.thumb_img);
 //		holder.atv.setText(address[position]);
 		//holder.thumb_img.setImageResource();
 		return rowView;

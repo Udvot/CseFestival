@@ -1,11 +1,19 @@
 package com.udvot.utils;
 
 public class Product {
-	private String productName,thumbImage,price;
-	public Product(String pName, String tImage,String price) {
+	private String productName,thumbImage,price,imageURL,description;
+	public Product(String pName, String tImage,String price,String imageURL,String description) {
 		this.price = price;
 		this.productName = pName;
 		this.thumbImage = tImage;
+		this.imageURL = imageURL;
+		this.description = description;
+	}
+	public String getImageURL() {
+		return imageURL;
+	}
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
 	}
 	
 	public String getProductName() {
