@@ -1,5 +1,8 @@
 package com.udvot.udvot_fest;
 
+import com.udvot.client.ApiClient;
+import com.udvot.client.Resource;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,6 +52,10 @@ public class SignUp extends Activity{
 					}
 					if(shouldProceed)
 					{
+						ApiClient.addHeaderValue(Resource.APP_ID_KEY, Resource.APP_ID_VALUE);
+						ApiClient.addHeaderValue(Resource.CONTENT_TYPE_KEY, Resource.CONTENT_TYPE_VALUE);
+						ApiClient.addHeaderValue(Resource.REST_API_KEY, Resource.REST_API_VALUE);
+						
 						
 					}
 				}
