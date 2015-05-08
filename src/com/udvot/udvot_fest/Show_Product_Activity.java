@@ -82,7 +82,9 @@ public class Show_Product_Activity extends Activity {
 						String pName = temp.getString("name");
 						String price = temp.getString("price");
 						String thumbURL = temp.getString("thumbURL");
-						Product p = new Product(pName, thumbURL, price);
+						String imageURL = temp.getString("imageURL");
+						String description = temp.getString("description");
+						Product p = new Product(pName, thumbURL, price,imageURL,description);
 						products.add(p);
 					}
 					enumarateArrays();
