@@ -240,6 +240,8 @@ int id activity_chooser_view_content 0x7f090025
 int id always 0x7f09000f
 int id beginning 0x7f090016
 int id button1 0x7f09003e
+int id button2 0x7f09003f
+int id button3 0x7f090040
 int id checkbox 0x7f09002e
 int id collapseActionView 0x7f090010
 int id default_activity_button 0x7f090028
