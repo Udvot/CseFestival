@@ -44,4 +44,10 @@ public class ApiClient {
 		});
 		return false;
 	}
+	public static void addHeaderValue(String key, String value) {
+		client.addHeader(key,value);
+	}
+	public static void removeHeaderValue(String key) {
+		client.removeHeader(key);
+	}
 }
