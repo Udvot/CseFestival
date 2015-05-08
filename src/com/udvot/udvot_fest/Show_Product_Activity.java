@@ -16,7 +16,7 @@ import com.udvot.adapters.CustomListAdapter;
 
 public class Show_Product_Activity extends Activity{
 	ListView list;
-	String[] productName, thumbImage; //= new String[100];
+	String[] productName, thumbImage, price; //= new String[100];
 //	String [] thumbImage = new String[100];
 	Vector<String> p = new Vector<String>();
 	@Override
@@ -26,7 +26,7 @@ public class Show_Product_Activity extends Activity{
 		setContentView(R.layout.product_list);
 		list=(ListView)findViewById(R.id.product_list);
 		initialize();
-		CustomListAdapter adapter= new CustomListAdapter(this, productName, thumbImage);
+		CustomListAdapter adapter= new CustomListAdapter(this, productName, thumbImage, price);
 		list.setAdapter(adapter);
 		
 		list.setOnItemClickListener(listListener);
@@ -34,13 +34,14 @@ public class Show_Product_Activity extends Activity{
 	
 	private void initialize() {
 		// TODO Auto-generated method stub
-		productName = new String[10];
-		thumbImage = new String[10];
-		
-		for(int i=0;i<10;i++){
+		productName = new String[5];
+		thumbImage = new String[5];
+		price = new String[5];
+		for(int i=0;i<5;i++){
 			productName[i] = "A";
 			thumbImage[i] = "http://online-kenakata.com/uploads/products_compressed/"
 					+ "products_1898_01378483961_212x159.jpg";
+			price[i] = "100";
 		}
 		
 	}

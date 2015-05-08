@@ -23,13 +23,14 @@ public class CustomListAdapter extends ArrayAdapter<String>{
 	
 	private final Activity context;
 	ApiClient client;
-	String[] name,thumbUrl;
+	String[] name,thumbUrl, price;
 	
-	public CustomListAdapter(Activity context,String[] name, String[] thumburl) {		
+	public CustomListAdapter(Activity context,String[] name, String[] thumburl, String price[]) {		
 		super(context, R.layout.product_list_item, name);
 		this.context = context;
 		this.name = name;
 		this.thumbUrl = thumburl;
+		this.price = price;
 		client = new ApiClient();
 		// TODO Auto-generated constructor stub
 	}
@@ -38,6 +39,7 @@ public class CustomListAdapter extends ArrayAdapter<String>{
 	public class Holder
     {
         TextView product_name;
+        TextView price;
         ImageView thumb_img;
     }
 	@Override
@@ -47,9 +49,11 @@ public class CustomListAdapter extends ArrayAdapter<String>{
 		Holder holder=new Holder();
 		View rowView= inflater.inflate(R.layout.product_list_item, null,true);
 		holder.product_name = (TextView) rowView.findViewById(R.id.name_textView);
+		holder.price = (TextView) rowView.findViewById(R.id.tvPrice);
 //		holder.atv=(TextView) rowView.findViewById(R.id.textView2);
 		holder.thumb_img = (ImageView) rowView.findViewById(R.id.listimageView);
 		holder.product_name.setText(name[position]);
+		holder.price.setText("Price : "+ price[position]);
 		client.setImageFromURL(thumbUrl[position], holder.thumb_img);
 //		holder.atv.setText(address[position]);
 		//holder.thumb_img.setImageResource();
