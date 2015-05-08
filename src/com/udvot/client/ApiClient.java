@@ -1,10 +1,18 @@
 package com.udvot.client;
 
 import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.entity.StringEntity;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -12,7 +20,7 @@ import com.loopj.android.http.RequestParams;
 
 public class ApiClient {
 	static AsyncHttpClient client = new AsyncHttpClient();
-	private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
+	private static String BASE_URL = "https://api.parse.com/1";
 
 	public static void get(String url, RequestParams params,
 			AsyncHttpResponseHandler responseHandler) {
@@ -21,8 +29,14 @@ public class ApiClient {
 
 	public static void post(String url, RequestParams params,
 			AsyncHttpResponseHandler responseHandler) {
-		client.post(url, params, responseHandler);
+		Log.e("udvot", "posting url + " +getAbsoluteUrl(url));
+		client.post(getAbsoluteUrl(url), params, responseHandler);
 	}
+	public static void post(Context context,String url,StringEntity entity,AsyncHttpResponseHandler responseHandler) {
+		
+		client.post(context, getAbsoluteUrl(url), entity, "application/json", responseHandler);
+	}
+
 
 	public static void put() {
 		
