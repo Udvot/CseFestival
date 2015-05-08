@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -41,22 +42,11 @@
 		        android:layout_gravity="center_horizontal"
 		        android:text="Price: Not Available" />
 
-		    <EditText
-		        android:id="@+id/etQuantity"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:ems="10"
-		        android:text="1"
-		        android:layout_gravity="center_horizontal"
-		        android:inputType="number" >
-
-		        <requestFocus />
-		    </EditText>
-
+		   
 		    <NumberPicker
 		        android:id="@+id/numberPicker1"
 		        android:layout_width="wrap_content"
-		        android:orientation="horizontal"
+		        android:orientation="vertical"
 		        android:layout_gravity="center_horizontal"
 		        android:layout_height="wrap_content" />
 

@@ -47,9 +47,10 @@ public class ProductDetailsActivity extends Activity {
 		productDecription = (TextView)findViewById(R.id.tvDesc);
 		productPrice  = (TextView)findViewById(R.id.tvPrice);
 		productImage = (ImageView)findViewById(R.id.imgProduct);
-		productQuantity = (EditText) findViewById(R.id.etQuantity);
+//		productQuantity = (EditText) findViewById(R.id.etQuantity);
 		numberPicker = (NumberPicker) findViewById(R.id.numberPicker1);
 		numberPicker.setMinValue(1);
+		numberPicker.setMaxValue(100);
 		addToCart = (Button) findViewById(R.id.bAddToCart);
 		
 		addToCart.setOnClickListener(new OnClickListener() {
