@@ -6,6 +6,28 @@
 	
      >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/etSearchBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/imgBtSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@android:drawable/ic_search_category_default" />
+
+    </LinearLayout>
+
 	<ListView 
 	    android:id="@+id/product_list"
 	    android:layout_width="match_parent"
