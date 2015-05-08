@@ -11,4 +11,5 @@ public class Resource {
 	public static String REST_API_VALUE = "QHh6SwA97ioIo8ZkmEczrpFr8jZB5G5rYybrlbpO";
 	
 	public static String SESSOIN_TOKEN_KEY = "X-Parse-Session-Token";
+	public static String SESSOIN_TOKEN_VALUE = "";
 }

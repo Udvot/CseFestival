@@ -91,10 +91,12 @@ public class SignUp extends Activity implements OnClickListener {
 					ApiClient.post(getApplicationContext(), "/users", entity,
 							new JsonHttpResponseHandler() {
 								@Override
-								public void onFailure(int statusCode, Throwable e,
-										JSONObject errorResponse) {
-									Toast.makeText(getApplicationContext(),
-											"Failed " + errorResponse.toString(),
+								public void onFailure(int statusCode,
+										Throwable e, JSONObject errorResponse) {
+									Toast.makeText(
+											getApplicationContext(),
+											"Failed "
+													+ errorResponse.toString(),
 											Toast.LENGTH_SHORT).show();
 									Log.d("udvot", errorResponse.toString());
 								};
@@ -109,22 +111,31 @@ public class SignUp extends Activity implements OnClickListener {
 												.getString("sessionToken");
 										Toast.makeText(
 												getApplicationContext(),
-												"User Name " + userName
+												"User Name "
+														+ userName
 														+ " created sucessfully",
+												Toast.LENGTH_SHORT).show();
+										Resource.SESSOIN_TOKEN_VALUE = sessionToken;
+										Toast.makeText(
+												getApplicationContext(),
+												"Session "
+														+ Resource.SESSOIN_TOKEN_VALUE,
 												Toast.LENGTH_SHORT).show();
 									} catch (JSONException e1) {
 										e1.printStackTrace();
 										try {
 											String code = response
 													.getString("code");
-											Toast.makeText(getApplicationContext(),
+											Toast.makeText(
+													getApplicationContext(),
 													"Error code" + code,
 													Toast.LENGTH_SHORT).show();
 										} catch (JSONException e) {
 											e.printStackTrace();
-											Toast.makeText(getApplicationContext(),
-													"Big error", Toast.LENGTH_SHORT)
-													.show();
+											Toast.makeText(
+													getApplicationContext(),
+													"Big error",
+													Toast.LENGTH_SHORT).show();
 										}
 									}
 								};
